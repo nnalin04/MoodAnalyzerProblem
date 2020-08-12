@@ -25,4 +25,14 @@ public class MoodAnalyzerTest {
         String mood = moodAnalyzer.analyzeMood();
         Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
     }
+
+    @Test
+    /*
+     * function to test for NULL input.
+     */
+    public void givenMessageNull_shouldReturnHappyMood(){
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
+        String mood = moodAnalyzer.analyzeMood();
+        Assert.assertThat(mood, CoreMatchers.is("Happy"));
+    }
 }
