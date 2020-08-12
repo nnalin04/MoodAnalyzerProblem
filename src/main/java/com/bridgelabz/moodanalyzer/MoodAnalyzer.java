@@ -10,9 +10,6 @@ public class MoodAnalyzer {
         this.message = message;
     }
 
-    /**
-     *
-     */
     public String analyzeMood() {
         try{
             if(message.length() == 0){
