@@ -11,8 +11,8 @@ public class MoodAnalyzerTest {
      * function to test for sad mood.
      */
     public void testSadMoodAnalysis(){
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        String mood = moodAnalyzer.analyzeMood("I am in Sad Mood");
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in Sad Mood");
+        String mood = moodAnalyzer.analyzeMood();
         Assert.assertThat(mood, CoreMatchers.is("SAD"));
     }
 
@@ -21,8 +21,8 @@ public class MoodAnalyzerTest {
      * function to test for any thing but sad mood.
      */
     public void testHappyMoodAnalysis(){
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        String mood = moodAnalyzer.analyzeMood("I am in Any Mood");
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in Any Mood");
+        String mood = moodAnalyzer.analyzeMood();
         Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
     }
 }
