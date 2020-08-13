@@ -10,7 +10,7 @@ public class MoodAnalyzerTest {
     /*
      * function to test for sad mood.
      */
-    public void testSadMoodAnalysis(){
+    public void givenMessage_whenSad_ShouldReturnSad(){
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in Sad Mood");
         String mood = moodAnalyzer.analyzeMood();
         Assert.assertThat(mood, CoreMatchers.is("SAD"));
@@ -20,7 +20,7 @@ public class MoodAnalyzerTest {
     /*
      * function to test for any thing but sad mood.
      */
-    public void testHappyMoodAnalysis(){
+    public void givenMessage_whenNotSad_shouldReturnHappy(){
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in Any Mood");
         String mood = moodAnalyzer.analyzeMood();
         Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
@@ -30,7 +30,7 @@ public class MoodAnalyzerTest {
     /*
      * function to test for NULL input.
      */
-    public void givenMessageNull_shouldReturnHappyMood(){
+    public void givenMessage_whenNull_shouldThrowException(){
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
         try{
             String mood = moodAnalyzer.analyzeMood();
@@ -43,7 +43,7 @@ public class MoodAnalyzerTest {
     /*
      * function to test for NULL input.
      */
-    public void givenMessageEmpty_shouldReturnEmptyMood(){
+    public void givenMessage_whenEmpty_shouldThrowException(){
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer("");
         try{
             String mood = moodAnalyzer.analyzeMood();
