@@ -30,7 +30,7 @@ public class MoodAnalyzerTest {
     /*
      * function to test for NULL input.
      */
-    public void givenMessageNull_shouldReturnHappyMood(){
+    public void givenMessage_whenNull_shouldThrowException(){
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
         try{
             String mood = moodAnalyzer.analyzeMood();
@@ -43,7 +43,7 @@ public class MoodAnalyzerTest {
     /*
      * function to test for NULL input.
      */
-    public void givenMessageEmpty_shouldReturnEmptyMood(){
+    public void givenMessage_whenEmpty_shouldThrowException(){
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer("");
         try{
             String mood = moodAnalyzer.analyzeMood();
