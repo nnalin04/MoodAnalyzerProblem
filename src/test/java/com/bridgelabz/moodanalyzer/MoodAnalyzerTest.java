@@ -30,25 +30,9 @@ public class MoodAnalyzerTest {
     /*
      * function to test for NULL input.
      */
-    public void givenMessageNull_shouldReturnHappyMood(){
+    public void givenMessage_WhenNull_shouldReturnHappyMood(){
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
-        try{
-            String mood = moodAnalyzer.analyzeMood();
-        }catch (MoodAnalyzerException e){
-            Assert.assertEquals(MoodAnalyzerException.ExceptionType.NULL,e.type);
-        }
-    }
-
-    @Test
-    /*
-     * function to test for NULL input.
-     */
-    public void givenMessageEmpty_shouldReturnEmptyMood(){
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer("");
-        try{
-            String mood = moodAnalyzer.analyzeMood();
-        }catch (MoodAnalyzerException e){
-            Assert.assertEquals(MoodAnalyzerException.ExceptionType.EMPTY,e.type);
-        }
+        String mood = moodAnalyzer.analyzeMood();
+        Assert.assertThat(mood, CoreMatchers.is("Happy"));
     }
 }
